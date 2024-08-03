@@ -1,5 +1,10 @@
 body {
-    background-color: #000;
+    background-image: url('img/backgorund2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* background-color: #000; */
     color: #fff;
 }
 
@@ -19,7 +24,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    /* gap: 15px; */
 }
 
 .gallery-item {
