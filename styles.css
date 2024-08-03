@@ -21,8 +21,8 @@ body {
 }
 
 .gallery-title{
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 4.5rem;
+    margin-bottom: 50px;
 }
 
 .gallery {
@@ -57,10 +57,12 @@ body {
 
 .modal-content {
     background-color: #000;
+    
 }
 
 .modal-body {
     padding: 0;
+    
 }
 
 .modal-footer {
@@ -91,6 +93,7 @@ body {
 .modal-dialog {
     max-width: 40%;
     margin: 30px auto;
+    
 }
 
 footer{
