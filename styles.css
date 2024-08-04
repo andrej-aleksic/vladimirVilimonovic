@@ -1,5 +1,5 @@
 body {
-    background-image: url('img/backgorund2.jpg');
+    background-image: url('img/backgorund2Smaller.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -102,11 +102,20 @@ footer{
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: #000;
     z-index: 9999;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ff6600;
+    text-align: center;
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ff6600;
 }
 
 

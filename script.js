@@ -14,8 +14,7 @@ $(document).ready(function() {
         { src: 'img/image12.jpeg', description: 'Description for image 12' },
     ];
 
-    const backgroundImage = { src: 'img/backgorund2.jpg' };
-    images.push(backgroundImage);
+
 
     images.forEach(image => {
         $('.gallery').append(`
@@ -27,6 +26,8 @@ $(document).ready(function() {
         `);
     });
 
+    const backgroundImage = { src: 'img/backgorund2Smaller.jpg' };
+    images.push(backgroundImage);
     let imagesLoaded = 0;
 
     function checkIfAllImagesLoaded() {
