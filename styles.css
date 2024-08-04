@@ -1,5 +1,5 @@
 body {
-    background-image: url('img/backgorund2.jpg');
+    background-image: url('img/backgorund2Smaller.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -90,12 +90,47 @@ body {
     margin-top: 10px;
 }
 
-.modal-dialog {
-    max-width: 40%;
-    margin: 30px auto;
-    
-}
 
 footer{
     color: #ff6600;
+}
+
+@media (min-width: 576px) { /* Extra small devices (phones, 576px and up) */
+    .modal-dialog {
+        max-width: 40%;
+        margin: 30px auto;
+        
+    }
+}
+
+@media (min-width: 768px) { /* Small devices (tablets, 768px and up) */
+    .modal-dialog {
+        max-width: 40%;
+        margin: 30px auto;
+        
+    }
+}
+
+@media (min-width: 992px) { /* Medium devices (desktops, 992px and up) */
+    .modal-dialog {
+        max-width: 40%;
+        margin: 30px auto;
+    }
+
+    .main-container{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+@media (min-width: 1200px) { /* Large devices (large desktops, 1200px and up) */
+    .modal-dialog {
+        max-width: 40%;
+        margin: 30px auto;
+    }
+
+    .main-container{
+        padding-left: 4%;
+        padding-right: 4%;
+    }
 }
