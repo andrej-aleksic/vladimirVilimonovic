@@ -19,12 +19,38 @@ body {
 .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 102, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-
+/* 
 #about{
-    /* background: rgba(0,0,0,0.8); */
     color: white;
     font-weight: bold;
+} */
+
+#about {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center; /* Centering text and image */
 }
+
+.about-img {
+    max-width: 50%; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px; /* Space between image and heading */
+}
+
+h2.text-orange {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+p {
+    color:white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
 
 
 .gallery-title{
