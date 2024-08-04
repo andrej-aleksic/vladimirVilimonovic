@@ -44,7 +44,7 @@ body {
     width: 100%;
     padding-top: 75%; /* 4:3 Aspect Ratio */
     overflow: hidden;
-    border: #ff6600 solid 1px;
+    /* border: #ff6600 solid 1px; */
 }
 
 .gallery-item img {
