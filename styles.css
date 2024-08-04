@@ -1,5 +1,5 @@
 body {
-    background-image: url('img/backgorund2Smaller.jpg');
+    background-image: url('img/backgorund2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -94,6 +94,22 @@ body {
 footer{
     color: #ff6600;
 }
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 @media (min-width: 576px) { /* Extra small devices (phones, 576px and up) */
     .modal-dialog {

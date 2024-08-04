@@ -14,6 +14,9 @@ $(document).ready(function() {
         { src: 'img/image12.jpeg', description: 'Description for image 12' },
     ];
 
+    const backgroundImage = { src: 'img/backgorund2.jpg' };
+    images.push(backgroundImage);
+
     images.forEach(image => {
         $('.gallery').append(`
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
@@ -23,6 +26,33 @@ $(document).ready(function() {
             </div>
         `);
     });
+
+    let imagesLoaded = 0;
+
+    function checkIfAllImagesLoaded() {
+        imagesLoaded++;
+        if (imagesLoaded === images.length) {
+            $('#loadingScreen').fadeOut('slow');
+        }
+    }
+
+    $('.gallery-img').each(function() {
+        if (this.complete) {
+            checkIfAllImagesLoaded.call(this);
+        } else {
+            $(this).one('load', checkIfAllImagesLoaded);
+        }
+    });
+
+    // Preload the background image
+    const bgImg = new Image();
+    bgImg.src = backgroundImage.src;
+    if (bgImg.complete) {
+        checkIfAllImagesLoaded.call(bgImg);
+    } else {
+        $(bgImg).one('load', checkIfAllImagesLoaded);
+    }
+
 
     $('.gallery-img').on('click', function() {
         const src = $(this).attr('src');
