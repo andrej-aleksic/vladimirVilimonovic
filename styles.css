@@ -58,9 +58,6 @@ p {
     margin-bottom: 30px;
 }
 
-.gallery {
-    column-count: 3;
-}
 
 .gallery-item {
     position: relative;
@@ -153,7 +150,11 @@ footer{
     .modal-dialog {
         max-width: 40%;
         margin: 30px auto;
-        
+    }
+
+    
+    .gallery {
+        column-count: 1;
     }
 }
 
@@ -162,6 +163,10 @@ footer{
         max-width: 40%;
         margin: 30px auto;
         
+    }
+
+    .gallery {
+        column-count: 1;
     }
 }
 
@@ -175,6 +180,10 @@ footer{
         padding-left: 4%;
         padding-right: 4%;
     }
+
+    .gallery {
+        column-count: 3;
+    }
 }
 
 @media (min-width: 1200px) { /* Large devices (large desktops, 1200px and up) */
@@ -186,5 +195,8 @@ footer{
     .main-container{
         padding-left: 4%;
         padding-right: 4%;
+    }
+    .gallery {
+        column-count: 3;
     }
 }
