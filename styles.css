@@ -145,6 +145,21 @@ footer{
 }
 
 
+/* Prevent right-click on images */
+/* Prevent right-click on images */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    /* user-drag: none; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
 
 @media (min-width: 576px) { /* Extra small devices (phones, 576px and up) */
     .modal-dialog {
