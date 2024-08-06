@@ -18,10 +18,8 @@ $(document).ready(function() {
 
     images.forEach(image => {
         $('.gallery').append(`
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
-                <div class="gallery-item">
-                    <img src="${image.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}">
-                </div>
+            <div class="gallery-item">
+                <img src="${image.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}">
             </div>
         `);
     });

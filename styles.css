@@ -54,7 +54,7 @@ p {
 
 
 .gallery-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 30px;
 }
 
@@ -79,6 +79,7 @@ p {
 .gallery-item img:hover {
     transform: scale(1.05);
 }
+
 
 
 
