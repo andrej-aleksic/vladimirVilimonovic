@@ -59,23 +59,49 @@ p {
 }
 
 
+/* Container for the image and overlay */
 .gallery-item {
     position: relative;
+    display: inline-block; /* To allow multiple images side by side */
     overflow: hidden;
-    padding-bottom: 3%;
 }
 
-.gallery-item img {
+/* Image with transition on scale */
+.gallery-img {
+    display: block;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
-.gallery-item img:hover {
-    transform: scale(1.05);
+/* Overlay styling, positioned at the bottom */
+.overlay {
+    position: absolute;
+    bottom: 0;  /* Position it at the bottom */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px;  /* Space between text and bottom edge */
 }
+
+/* Gallery item hover: scale image and show overlay */
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05); /* Scale the image */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Show overlay */
+}
+
+/* Ensure overlay doesn't block click event if not needed for modal */
+.gallery-item:hover .overlay {
+    pointer-events: none;
+}
+
 
 
 

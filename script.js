@@ -32,6 +32,7 @@ $(document).ready(function() {
         $('.gallery').append(`
             <div class="gallery-item">
                 <img src="${image.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}">
+                <div class="overlay">${image.description}</div>
             </div>
         `);
     });
