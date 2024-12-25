@@ -1,11 +1,13 @@
 body {
-    background-image: url('img/backgorund2Smaller.jpg');
+    background-image: url('img/background1dark.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     /* background-color: #000; */
     color: #fff;
+    overflow-x: hidden;
+
 }
 
 .text-orange {
