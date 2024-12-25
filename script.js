@@ -69,8 +69,18 @@ $(document).ready(function() {
     $('.gallery-img').on('click', function() {
         const src = $(this).attr('src');
         const description = $(this).data('description');
+    
+        // Set image and description in modal
         $('.modal-img').attr('src', src);
         $('.modal-description').text(description);
+    
+        // Adjust modal size dynamically
+        $('#imageModal').on('shown.bs.modal', function () {
+            const modalDialog = $(this).find('.modal-dialog');
+            modalDialog.css('max-width', '90%');
+        });
+    
         $('#imageModal').modal('show');
     });
+    
 });

@@ -107,15 +107,6 @@ p {
 
 
 
-
-
-
-
-.modal-content {
-    background-color: #000;
-    
-}
-
 .modal-body {
     padding: 0;
     
@@ -135,10 +126,19 @@ p {
     border-color: #e65c00;
 }
 
-.modal-img {
-    width: 100%;
-    height: auto;
+.modal-dialog {
+    max-width: 90%; /* Increase modal width */
+    margin: auto;
 }
+
+.modal-img {
+    max-width: 100%;
+    max-height: calc(100vh - 80px); /* Ensure the image fits the viewport height */
+    margin: auto;
+    display: block;
+    object-fit: contain; /* Preserve aspect ratio */
+}
+
 
 .modal-description {
     color: #ff6600;
