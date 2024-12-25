@@ -6,6 +6,8 @@ body {
     background-position: center;
     /* background-color: #000; */
     color: #fff;
+    overflow-x: hidden;
+
 }
 
 .text-orange {
