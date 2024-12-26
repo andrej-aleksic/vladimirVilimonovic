@@ -66,6 +66,7 @@ p {
     position: relative;
     display: inline-block; /* To allow multiple images side by side */
     overflow: hidden;
+    margin-bottom: 2%;
 }
 
 /* Image with transition on scale */
