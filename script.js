@@ -83,4 +83,8 @@ $(document).ready(function() {
         $('#imageModal').modal('show');
     });
     
+    window.addEventListener('resize', () => {
+        const slideshow = document.querySelector('#slideshow');
+        slideshow.style.height = `${window.innerHeight}px`;
+    });
 });

@@ -14,6 +14,15 @@ body {
     color: #ff6600;
 }
 
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Ensure it is above the slideshow */
+    box-shadow: none; /* Remove shadow if present */
+}
+
 .navbar-dark .navbar-brand, .navbar-dark .nav-link {
     color: #ff6600;
 }
@@ -191,6 +200,21 @@ img {
     user-select: none;
 }
 
+
+#slideshow {
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Prevent overflow */
+}
+
+#slideshow .carousel-inner {
+    height: 100%; /* Make inner carousel full height */
+}
+
+#slideshow .carousel-item img {
+    height: 100%; /* Images take full height */
+    object-fit: cover; /* Crop the image while keeping its aspect ratio */
+    width: 100%; /* Full width */
+}
 
 
 
