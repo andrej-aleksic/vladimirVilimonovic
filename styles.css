@@ -208,7 +208,9 @@ img {
 
 #slideshow .carousel-inner {
     height: 100%; /* Make inner carousel full height */
-}
+    display: flex;
+    align-items: center;
+} 
 
 #slideshow .carousel-item img {
     height: 100%; /* Images take full height */
