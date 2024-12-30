@@ -126,7 +126,7 @@ $(document).ready(function () {
 
     // Preload the background image
     const bgImg = new Image();
-    bgImg.src = 'img/_pozadina.jpg';
+    bgImg.src = 'img/pozadina.jpg';
     if (bgImg.complete) {
         checkIfAllImagesLoaded();
     } else {
