@@ -37,7 +37,7 @@ $(document).ready(function() {
         `);
     });
 
-    const backgroundImage = { src: 'img/background1dark.jpg' };
+    const backgroundImage = { src: 'img/_pozadina.jpg' };
     images.push(backgroundImage);
     let imagesLoaded = 0;
 
