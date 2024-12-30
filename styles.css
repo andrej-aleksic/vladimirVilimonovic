@@ -218,7 +218,14 @@ img {
     width: 100%; /* Full width */
 }
 
-
+#loadMore{
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
 
 @media (min-width: 576px) { /* Extra small devices (phones, 576px and up) */
     .modal-dialog {
