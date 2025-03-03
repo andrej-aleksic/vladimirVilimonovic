@@ -152,4 +152,15 @@ $(document).ready(function () {
         const slideshow = document.querySelector('#slideshow');
         slideshow.style.height = `${window.innerHeight}px`;
     });
+
+    $('.read-more-btn').click(function () {
+        const moreText = $('.more-text');
+        if (moreText.is(':visible')) {
+            moreText.slideUp(300);
+            $(this).text('Read More');
+        } else {
+            moreText.slideDown(300);
+            $(this).text('Read Less');
+        }
+    });
 });
