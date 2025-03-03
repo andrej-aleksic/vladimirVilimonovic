@@ -129,6 +129,7 @@ $(document).ready(function () {
     { src: 'img/Vladimir Vilimonovic - Serbia 4.jpg', description: 'Vladimir Vilimonovic - Serbia 4' },
     { src: 'img/Vladimir Vilimonovic - Serbia 5.jpg', description: 'Vladimir Vilimonovic - Serbia 5' },
     { src: 'img/Vladimir Vilimonovic - Serbia 6.jpg', description: 'Vladimir Vilimonovic - Serbia 6' },
+    { src: 'img/Vladimir Vilimonovic - Serbia.jpg', description: 'Vladimir Vilimonovic - Serbia' },
     { src: 'img/Vladislav Mandic - Kopaonik, Serbia.jpg', description: 'Vladislav Mandic - Kopaonik, Serbia' },
     { src: 'img/Wade Young - Zlatibor, Serbia 1.jpg', description: 'Wade Young - Zlatibor, Serbia 1' },
     { src: 'img/Wade Young - Zlatibor, Serbia 2.jpg', description: 'Wade Young - Zlatibor, Serbia 2' },
