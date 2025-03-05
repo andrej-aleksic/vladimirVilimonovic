@@ -219,8 +219,8 @@ img {
 }
 
 #loadMore{
-    background-color: #ff6600;
-    color: white;
+    /* background-color: #ff6600;
+    color: white; */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
