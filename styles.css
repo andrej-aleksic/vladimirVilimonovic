@@ -72,7 +72,7 @@ p {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(1, 1fr); /* 3 equal columns */
     gap: 10px;
     grid-auto-flow: dense; /* Helps fill gaps efficiently */
   }
