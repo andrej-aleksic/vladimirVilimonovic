@@ -150,7 +150,7 @@ $(document).ready(function () {
       ];
       
 
-    const imagesPerPage = 25;
+    const imagesPerPage = 24;
     let currentPage = 0;
     let imagesLoaded = 0;
 
