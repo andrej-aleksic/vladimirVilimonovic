@@ -162,7 +162,7 @@ $(document).ready(function () {
         chunk.forEach(image => {
             $('.gallery').append(`
                 <div class="gallery-item">
-                    <img src="${image.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}">
+                    <img src="imgLow/${image.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}" data-fullres="${image.src}">
                     <div class="overlay">${image.description}</div>
                 </div>
             `);
@@ -223,9 +223,10 @@ $(document).ready(function () {
 
     $('.gallery').on('click', '.gallery-img', function () {
         const src = $(this).attr('src');
+        const highResSrc = $(this).attr('data-fullres'); // Get high-res image path
         const description = $(this).data('description');
 
-        $('.modal-img').attr('src', src);
+        $('.modal-img').attr('src', highResSrc);
         $('.modal-description').text(description);
 
         $('#imageModal').on('shown.bs.modal', function () {
