@@ -195,7 +195,7 @@ $(document).ready(function () {
     function preloadImages(imageSources) {
         imageSources.forEach(src => {
             const img = new Image();
-            img.src = src;
+            img.src = `imgLow/${src}`;
             if (img.complete) {
                 checkIfAllImagesLoaded();
             } else {
@@ -222,7 +222,7 @@ $(document).ready(function () {
     }
 
     $('.gallery').on('click', '.gallery-img', function () {
-        const src = $(this).attr('src');
+        // const src = $(this).attr('src');
         const highResSrc = $(this).attr('data-fullres'); // Get high-res image path
         const description = $(this).data('description');
 
