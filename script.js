@@ -222,11 +222,19 @@ $(document).ready(function () {
     }
 
     $('.gallery').on('click', '.gallery-img', function () {
-        // const src = $(this).attr('src');
         const highResSrc = $(this).attr('data-fullres'); // Get high-res image path
         const description = $(this).data('description');
 
-        $('.modal-img').attr('src', highResSrc);
+        // Show centered loading spinner
+        $('.modal-body').append('<div class="spinner-border text-warning modal-spinner" role="status" style="position: absolute; top: 50%; left: 50%;"></div>');
+        $('.modal-img').hide();
+
+        $('.modal-img').attr('src', highResSrc).on('load', function () {
+            // Hide spinner and show image once loaded
+            $('.modal-spinner').remove();
+            $(this).fadeIn();
+        });
+
         $('.modal-description').text(description);
 
         $('#imageModal').on('shown.bs.modal', function () {
