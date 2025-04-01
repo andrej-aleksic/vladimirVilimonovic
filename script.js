@@ -154,28 +154,60 @@ $(document).ready(function () {
     let currentPage = 0;
     let imagesLoaded = 0;
 
-    function loadImages() {
+     // Function to load images
+     function loadImages() {
         const startIndex = currentPage * imagesPerPage;
         const endIndex = startIndex + imagesPerPage;
-
         const chunk = images.slice(startIndex, endIndex);
+
+        // Replace Load More button with spinner
+        $('#loadMore').hide();
+        $('.load-more-container').append('<div id="loadingSpinner" class="spinner-border text-warning"></div>');
+
+        let imagesToAppend = [];
+        let imagesLoaded = 0;
+
+        // Loop through each image and preload it
         chunk.forEach(image => {
-            $('.gallery').append(`
+            const img = new Image();
+            img.src = `imgLow/${image.src}`;
+            img.alt = image.description;
+            img.classList.add('img-fluid', 'gallery-img');
+            img.setAttribute('data-description', image.description);
+            img.setAttribute('data-fullres', image.src);
+
+            // Create the full gallery item, including the overlay
+            const galleryItem = $(`
                 <div class="gallery-item">
-                    <img src="imgLow/${image.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}" data-fullres="${image.src}">
+                    <img src="${img.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}" data-fullres="${img.src}">
                     <div class="overlay">${image.description}</div>
                 </div>
             `);
+
+            imagesToAppend.push(galleryItem);
+
+            $(img).on('load', function () {
+                imagesLoaded++;
+
+                // Check if all images in the current chunk are loaded
+                if (imagesLoaded === chunk.length) {
+                    // Append all images once they're loaded
+                    imagesToAppend.forEach(galleryItem => {
+                        $('.gallery').append(galleryItem);
+                    });
+
+                    // Remove the loading spinner once all images are loaded
+                    $('#loadingSpinner').remove();
+
+                    // Show Load More button if applicable
+                    if (currentPage * imagesPerPage < images.length) {
+                        $('#loadMore').show();
+                    }
+                }
+            });
         });
 
         currentPage++;
-
-        // Hide the "Load More" button if no more images
-        if (currentPage * imagesPerPage >= images.length) {
-            $('#loadMore').hide();
-        }
-
-        preloadImages(chunk.map(image => image.src));
     }
 
     // Initial load
@@ -188,31 +220,15 @@ $(document).ready(function () {
         </div>
     `);
 
+    // Event for Load More button click
     $('#loadMore').on('click', function () {
-        loadImages();
+        $(this).hide(); // Hide the "Load More" button
+        $('.main-container').append('<div id="loadingSpinner" class="text-center mt-4"><div class="spinner-border text-warning" role="status"></div></div>');
+
+        loadImages(); // Load more images
     });
 
-    function preloadImages(imageSources) {
-        imageSources.forEach(src => {
-            const img = new Image();
-            img.src = `imgLow/${src}`;
-            if (img.complete) {
-                checkIfAllImagesLoaded();
-            } else {
-                $(img).on('load', checkIfAllImagesLoaded);
-            }
-        });
-    }
-
-    function checkIfAllImagesLoaded() {
-        imagesLoaded++;
-        const totalVisibleImages = $('.gallery-img').length;
-        if (imagesLoaded === totalVisibleImages) {
-            $('#loadingScreen').fadeOut('slow');
-        }
-    }
-
-    // Preload the background image
+    // Preload the background image (if necessary)
     const bgImg = new Image();
     bgImg.src = 'img/pozadina.jpg';
     if (bgImg.complete) {
@@ -221,6 +237,15 @@ $(document).ready(function () {
         $(bgImg).on('load', checkIfAllImagesLoaded);
     }
 
+    // Function to check if all images are loaded (background image handling)
+    function checkIfAllImagesLoaded() {
+        const totalVisibleImages = $('.gallery-img').length;
+        if (totalVisibleImages === imagesLoaded) {
+            $('#loadingScreen').fadeOut('slow');
+        }
+    }
+
+    // Modal image handling on click
     $('.gallery').on('click', '.gallery-img', function () {
         const highResSrc = $(this).attr('data-fullres'); // Get high-res image path
         const description = $(this).data('description');
@@ -245,11 +270,13 @@ $(document).ready(function () {
         $('#imageModal').modal('show');
     });
 
+    // Resize slideshow container
     window.addEventListener('resize', () => {
         const slideshow = document.querySelector('#slideshow');
         slideshow.style.height = `${window.innerHeight}px`;
     });
 
+    // Read more button handling
     $('.read-more-btn').click(function () {
         const moreText = $('.more-text');
         if (moreText.is(':visible')) {
