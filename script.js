@@ -179,7 +179,7 @@ $(document).ready(function () {
             // Create the full gallery item, including the overlay
             const galleryItem = $(`
                 <div class="gallery-item">
-                    <img src="${img.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}" data-fullres="${img.src}">
+                    <img src="${img.src}" alt="Photo" class="img-fluid gallery-img" data-description="${image.description}" data-fullres="${image.src}">
                     <div class="overlay">${image.description}</div>
                 </div>
             `);
