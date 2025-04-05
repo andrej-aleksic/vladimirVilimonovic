@@ -249,6 +249,22 @@ img {
     margin-bottom: 2%;
 }
 
+/* Style for input and textarea fields */
+input.form-control, textarea.form-control {
+    background-color: rgba(0, 0, 0, 0.8);  /* Black background */
+    color: white;             /* White text */
+    border: 1px solid white;  /* White border */
+}
+
+/* Optional: Focus style to make it stand out when clicked */
+input.form-control:focus, textarea.form-control:focus {
+    background-color: rgba(0, 0, 0, 0.8);  /* Ensure the background stays black */
+    color: white;             /* Ensure the text stays white */
+    border: 1px solid #ffcc00;  /* Change border color on focus (optional) */
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.7); /* Optional: add some glow effect on focus */
+}
+
+
 @media (min-width: 576px) { /* Extra small devices (phones, 576px and up) */
     .modal-dialog {
         max-width: 40%;
