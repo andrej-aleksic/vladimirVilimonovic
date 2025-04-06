@@ -16,20 +16,20 @@ height: 100vh; /* Ensure the body takes full viewport height */
 margin: 0; /* Remove any default margins */">
 
     <nav class="navbar navbar-expand-lg navbar-dark"  style="position: relative; ">
-        <a class="navbar-brand text-warning" href="index.html"><span style="font-size: 1.2rem;">VLADIMIR VILIMONOVIC</span></a>
+        <a class="navbar-brand text-warning" href="index.html"><span style="font-size: 1.4rem;">VLADIMIR VILIMONOVIC</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="index.html#about" style="font-size: 1.2rem;">ABOUT</a>
+                    <a class="nav-link text-warning" href="index.html#about" style="font-size: 1.4rem;">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="index.html#gallery" style="font-size: 1.2rem;">SHOTS</a>
+                    <a class="nav-link text-warning" href="index.html#gallery" style="font-size: 1.4rem;">SHOTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="contact.html" style="font-size: 1.2rem;"> CONTACT</a>
+                    <a class="nav-link text-warning" href="contact.html" style="font-size: 1.4rem;"> CONTACT</a>
                 </li>
             </ul>
         </div>
@@ -56,7 +56,7 @@ margin: 0; /* Remove any default margins */">
             <div class="col-md-6">
                 <!-- <h3 class="mb-4">Send Me a Message</h3> -->
                 <div class="contact-form">
-                    <form action="submit_contact_form.php" method="POST">
+                    <form id="contact-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Your Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
@@ -70,6 +70,7 @@ margin: 0; /* Remove any default margins */">
                             <textarea class="form-control" id="message" name="message" rows="4" required style="resize: none;"></textarea>
                         </div>
                         <button type="submit" class="btn btn-warning">Send Message</button>
+                        <div id="form-message" class="mt-3 text-white"></div>
                     </form>
                 </div>
             </div>
@@ -99,5 +100,23 @@ margin: 0; /* Remove any default margins */">
             }
         }, false);
     </script>
+    <script>
+        $('#contact-form').on('submit', function(e) {
+            e.preventDefault();
+        
+            $.ajax({
+                url: 'send_mail.php', // You'll create this file
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#form-message').text('Message sent successfully!').css('color', '#28a745');
+                    $('#contact-form')[0].reset();
+                },
+                error: function() {
+                    $('#form-message').text('There was an error. Please try again.').css('color', '#dc3545');
+                }
+            });
+        });
+        </script>        
 </body>
 </html>
