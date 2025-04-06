@@ -41,7 +41,7 @@ body {
 } */
 
 #about {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    /* background: rgba(0, 0, 0, 0.7); */
     padding: 20px;
     border-radius: 10px;
     margin-top: 30px;
@@ -57,6 +57,10 @@ body {
 h2.text-orange {
     font-size: 2rem;
     margin-top: 20px;
+}
+
+.about-moreText{
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 p {
